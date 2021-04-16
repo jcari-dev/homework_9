@@ -15,7 +15,21 @@
 </head>
 
 <body>
-    <h1> Welcome to gitPub</h1>
+    <h1>Missions to Mars</h1>
+    <ul>
+        <% for (let i = 0; i < allDrinks.length; i++) { %>
+            <li>
+                <a href="/drinks/<%=i%>">
+                    <%=allDrinks[i]
+                    .name.toLowerCase().split(/ +/)
+                    .map(word => word.slice(0, 1).toUpperCase() + word.slice(1))
+                    .join(' ');%>
+                </a>
+                <!-- What would you recommend at the time of doing this? How would you capitalize it in an easier way? 
+                I have seen other methods but they all pretty similar -->
+            </li>
+            <% } %>
+    </ul>
 </body>
 
 </html>
