@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: ivory;
+            color: khaki;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/drinks">Back to Index</a>
+    <h1>At foo bar</h1>
+    <h2>
+        <%= drinks.name.toLowerCase().split(/ +/)
+        .map(word => word.slice(0, 1).toUpperCase() + word.slice(1))
+        .join(' ');%> %>
+    </h2>
+    <img src="<%= drinks.image.replace('jpg', 'png') %>" />
+    <h3> Price:
+        <%= drinks.price %> Bitcoin/s
+    </h3>
+
+</body>
+
+</html>
