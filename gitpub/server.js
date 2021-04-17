@@ -1,22 +1,46 @@
 const express = require('express');
 const port = 3000;
 const app = express();
-const drinks = require('./models/drinks.js')
+const drinks = require('./models/drinks.js');
+// const foodL = require('./models/foodL.js');
+// const foodL = require('.models/foodL.js')
+
+
 app.get('/', (req, res) => {
     res.send('Welcome to the Gitpub App!')
 })
 
 app.get('/drinks', (req, res) => {
-    res.render('index.ejs', {
-        allDrinks: drinks
+        res.render('index.ejs', {
+            allDrinks: drinks
+        })
     })
-})
+    // app.get('/foodL', (req, res) => {
+    //     res.render('index.ejs', {
+    //         foodList: foodL
+    //     })
+    // })
 app.get('/drinks/:id', (req, res) => {
-    res.render('show.ejs', {
-        drinks: drinks[req.params.id]
+        res.render('show.ejs', {
+            drinks: drinks[req.params.id]
+        })
     })
-})
-
+    // app.get('/foodL/:id', (req, res) => {
+    //     res.render('show.ejs', {
+    //         foodList: foodL[req.params.id]
+    //     })
+    // })
+    // <!-- <p>Food</p> -->
+    // <!-- <ul> -->
+    // <!-- <% for (let i = 0; i < foodList.length; i++) { %> -->
+    // <!-- <li> -->
+    // <!-- <a href="/foodL/<%=i%>"> -->
+    // <!-- <%=foodList[i] -->
+    // <!-- .name%> -->
+    // <!-- </a> -->
+    // <!-- </li> -->
+    // <!-- <% } %> -->
+    // <!-- </ul> -->
 
 
 
